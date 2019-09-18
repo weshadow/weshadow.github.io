@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>吴思润的个人博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-09-18T09:12:14.947Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>weshadow</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开篇-我的个人博客开张了!</title>
+    <link href="http://yoursite.com/2019/09/18/%E5%BC%80%E7%AF%87/"/>
+    <id>http://yoursite.com/2019/09/18/开篇/</id>
+    <published>2019-09-18T08:30:11.000Z</published>
+    <updated>2019-09-18T09:12:14.947Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="心路历程" scheme="http://yoursite.com/categories/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/"/>
+    
+    
+      <category term="其他" scheme="http://yoursite.com/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+</feed>
