@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>吴思润的个人博客</title>
+  <title>Shadow的个人博客</title>
   
-  
+  <subtitle>静以修身、俭以养德</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-18T09:12:14.947Z</updated>
+  <updated>2019-09-19T01:52:32.207Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,16 @@
     <link href="http://yoursite.com/2019/09/18/%E5%BC%80%E7%AF%87/"/>
     <id>http://yoursite.com/2019/09/18/开篇/</id>
     <published>2019-09-18T08:30:11.000Z</published>
-    <updated>2019-09-18T09:12:14.947Z</updated>
+    <updated>2019-09-19T01:52:32.207Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="想写点东西"><a href="#想写点东西" class="headerlink" title="想写点东西"></a>想写点东西</h3><p>&nbsp;&nbsp;从参加工作,到后来加入博客园这么多年的时间其实一直就想将自己经历和所学慢慢整理记录下来.做成自己的博客查阅,但是一直也没能有动力去实现它.<br>&nbsp;&nbsp;到现在来说博客已经见怪不怪了,方便快捷,而且也越来越多元化.身为一个从业这么多年的码农,此时更想把自己所学慢慢整理记录起来.<br>这也就是说~我的博客开张啦~</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;想写点东西&quot;&gt;&lt;a href=&quot;#想写点东西&quot; class=&quot;headerlink&quot; title=&quot;想写点东西&quot;&gt;&lt;/a&gt;想写点东西&lt;/h3&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;从参加工作,到后来加入博客园这么多年的时间其实一直就想将自己经历和所学慢慢整理记录下来.做成
+      
     
     </summary>
     
