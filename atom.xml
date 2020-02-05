@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-08T00:39:05.090Z</updated>
+  <updated>2020-02-05T02:31:33.199Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2020年读书笔记</title>
+    <link href="http://yoursite.com/2020/02/05/2020%E5%B9%B4%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2020/02/05/2020年读书笔记/</id>
+    <published>2020-02-05T02:17:27.000Z</published>
+    <updated>2020-02-05T02:31:33.199Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="2020年-读书笔记"><a href="#2020年-读书笔记" class="headerlink" title="2020年 读书笔记"></a>2020年 读书笔记</h2><p>### </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;2020年-读书笔记&quot;&gt;&lt;a href=&quot;#2020年-读书笔记&quot; class=&quot;headerlink&quot; title=&quot;2020年 读书笔记&quot;&gt;&lt;/a&gt;2020年 读书笔记&lt;/h2&gt;&lt;p&gt;### &lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="心路历程" scheme="http://yoursite.com/categories/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/"/>
+    
+    
+      <category term="读书" scheme="http://yoursite.com/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2019年读书笔记</title>
     <link href="http://yoursite.com/2019/09/20/2019%E5%B9%B4%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2019/09/20/2019年读书笔记/</id>
     <published>2019-09-20T05:54:20.000Z</published>
-    <updated>2019-10-08T00:39:05.090Z</updated>
+    <updated>2020-02-05T02:15:30.749Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="《未来简史》"><a href="#《未来简史》" class="headerlink" title="《未来简史》"></a>《未来简史》</h4><h4 id="《断舍离》-nbsp-nbsp-2019更早"><a href="#《断舍离》-nbsp-nbsp-2019更早" class="headerlink" title="《断舍离》&nbsp;&nbsp;2019更早"></a>《断舍离》&nbsp;&nbsp;2019更早</h4><h4 id="《人类简史》-nbsp-nbsp-2019-09-23"><a href="#《人类简史》-nbsp-nbsp-2019-09-23" class="headerlink" title="《人类简史》&nbsp;&nbsp;2019-09-23"></a>《人类简史》&nbsp;&nbsp;2019-09-23</h4><p>*</p><h4 id="《未来简史》-1"><a href="#《未来简史》-1" class="headerlink" title="《未来简史》"></a>《未来简史》</h4><h4 id="《大话数据结构》"><a href="#《大话数据结构》" class="headerlink" title="《大话数据结构》"></a>《大话数据结构》</h4>]]></content>
+    <content type="html"><![CDATA[<h4 id="《未来简史》"><a href="#《未来简史》" class="headerlink" title="《未来简史》"></a>《未来简史》</h4><h4 id="《断舍离》-nbsp-nbsp-2019更早"><a href="#《断舍离》-nbsp-nbsp-2019更早" class="headerlink" title="《断舍离》&nbsp;&nbsp;2019更早"></a>《断舍离》&nbsp;&nbsp;2019更早</h4><h4 id="《人类简史》-nbsp-nbsp-2019-09-23"><a href="#《人类简史》-nbsp-nbsp-2019-09-23" class="headerlink" title="《人类简史》&nbsp;&nbsp;2019-09-23"></a>《人类简史》&nbsp;&nbsp;2019-09-23</h4><h4 id="《未来简史》-1"><a href="#《未来简史》-1" class="headerlink" title="《未来简史》"></a>《未来简史》</h4><h4 id="《大话数据结构》"><a href="#《大话数据结构》" class="headerlink" title="《大话数据结构》"></a>《大话数据结构》</h4><h4 id="《可复制的领导力》"><a href="#《可复制的领导力》" class="headerlink" title="《可复制的领导力》"></a>《可复制的领导力》</h4>]]></content>
     
     <summary type="html">
     
@@ -47,7 +74,7 @@
     <link href="http://yoursite.com/2019/09/18/%E5%BC%80%E7%AF%87/"/>
     <id>http://yoursite.com/2019/09/18/开篇/</id>
     <published>2019-09-18T08:30:11.000Z</published>
-    <updated>2019-09-19T02:16:39.408Z</updated>
+    <updated>2020-01-10T09:26:21.188Z</updated>
     
     <content type="html"><![CDATA[<h3 id="想写点东西"><a href="#想写点东西" class="headerlink" title="想写点东西"></a>想写点东西</h3><p>&nbsp;&nbsp;从参加工作,到后来加入博客园这么多年的时间其实一直就想将自己经历和所学慢慢整理记录下来.做成自己的博客查阅,但是一直也没能有动力去实现它.<br>&nbsp;&nbsp;到现在来说博客已经见怪不怪了,方便快捷,而且也越来越多元化.身为一个从业这么多年的码农,此时更想把自己所学慢慢整理记录起来.<br>这也就是说~我的博客开张啦~</p>]]></content>
     
