@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-28T05:53:22.810Z</updated>
+  <updated>2020-05-05T00:12:43.089Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>电影随笔</title>
+    <link href="http://yoursite.com/2020/05/05/%E7%94%B5%E5%BD%B1%E9%9A%8F%E7%AC%94/"/>
+    <id>http://yoursite.com/2020/05/05/电影随笔/</id>
+    <published>2020-05-05T00:09:57.000Z</published>
+    <updated>2020-05-05T00:12:43.089Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="《美丽人生》"><a href="#《美丽人生》" class="headerlink" title="《美丽人生》"></a>《美丽人生》</h5><h6 id="“早安，午安，晚安，我的公主！”"><a href="#“早安，午安，晚安，我的公主！”" class="headerlink" title="“早安，午安，晚安，我的公主！”"></a>“早安，午安，晚安，我的公主！”</h6><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;《美丽人生》&quot;&gt;&lt;a href=&quot;#《美丽人生》&quot; class=&quot;headerlink&quot; title=&quot;《美丽人生》&quot;&gt;&lt;/a&gt;《美丽人生》&lt;/h5&gt;&lt;h6 id=&quot;“早安，午安，晚安，我的公主！”&quot;&gt;&lt;a href=&quot;#“早安，午安，晚安，我的公主！”&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="电影" scheme="http://yoursite.com/categories/%E7%94%B5%E5%BD%B1/"/>
+    
+    
+      <category term="电影" scheme="http://yoursite.com/tags/%E7%94%B5%E5%BD%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>目标计划</title>
