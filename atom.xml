@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-05T00:12:43.089Z</updated>
+  <updated>2020-05-05T11:55:23.417Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020面试准备</title>
+    <link href="http://yoursite.com/2020/05/05/2020%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
+    <id>http://yoursite.com/2020/05/05/2020面试准备/</id>
+    <published>2020-05-05T11:51:18.000Z</published>
+    <updated>2020-05-05T11:55:23.417Z</updated>
+    
+    <content type="html"><![CDATA[<p>01、透彻理解Tomcat原理手写动静态资源的实现<br>02、分享能源领域的分布式监测系统架构<br>03、分布式系统关键技术Rpc框架详解与实现<br>04、自己写一个SpringMVC框架<br>05、使用Jsoup实现网页爬虫功能<br>06、JAVA高级进阶之NIO通信架构原理详解<br>07、高手必过之路透彻理解Spring容器IOC的原理分析<br>08、并发编程之深入业务隔离场景原理详解<br>09、深入浅出Java虚拟机<br>10、源码分析之手写MyBatis<br>11、大型分布式服务治理技术-Dubbo企业级实战<br>12、大流量高并发之限流特技<br>13、深入分析热部署机制的原理实现<br>14、高性能反向代理服务器Nginx-动静分离实战<br>15、架构师必备技能之Spring MVC框架原理解析<br>下面为系统的学习方向<br>01、maven的使用<br>maven的使用入门<br>maven私服的搭建及部署<br>maven坐标分析/父控设置<br>02、git版本管理及jenkins自动化构建<br>git使用入门培训<br>git常用命令分析和使用<br>jenkins环境搭建及插件配置<br>git+jenkins实现自动化构建<br>03、NoSql专题-redis高性能缓存<br>redis使用入门<br>redis常用命令及客户端的使用<br>redis高可用集群搭建<br>04、NoSql专题-mongodb<br>mongodb使用入门<br>mongodb高可用集群搭建<br>mongodb常用命令及客户端的使用<br>05、分布式专题-zookeeper+dubbo服务协调<br>zookeeper安装部署及命令分析<br>zookeeper客户端的使用<br>zookeeper实现原理分析<br>dubbo的使用入门及配置分析<br>zookeeper+dubbo实现服务注册和发现<br>06、分布式专题-消息中间件<br>activeMq-jms规范及使用<br>activeMq消息分发机制分析<br>kafka实现原理剖析<br>kafka的数据传输事务性及实践练习<br>07、分布式缓存分析对比<br>memcache的原理分析及使用<br>memcache和redis的横向对比分析<br>分布式接口技术<br>webservice/RMI/restful的使用<br>09、高并发专题-数据库层面优化<br>分库分表的原理及规则讲解<br>数据库主备及高可用<br>10、性能调优专题-jvm调优<br>JVM原理剖析<br>jvm内存模型及垃圾回收器的分析<br>11、性能调优专题-容器性能优化<br>nginx性能优化<br>tomcat性能优化<br>12、性能调优专题-数据库优化<br>mysql常见优化手段分析及实践<br>13、高性能容器的使用<br>nginx使用入门<br>nginx负载均衡/反向代理实现<br>14、双十一专题-九阳真经<br>太极聚气之分布式压测平台<br>氤氲紫气之分布式缓存体系<br>盘龙真诀之分布式消息系统<br>金刚之躯之分布式跟踪系统<br>外功辅助之分布式配置系统<br>15、微服务架构技术栈分析<br>springboot的使用<br>16、分布式协调服务zookeeper<br>zookeeper集群及相关概念分析<br>zookeeper java api的使用及实践<br>17、从集中式到分布式架构<br>分布式架构的演进过程<br>分布式架构的基石-TCP/UDP<br>18、分布式通信协议<br>分布式通信协议-HTTP及RESTful<br>分布式通信协议-webservice详解<br>分布式通信协议-RMI<br>分布式通信协议-序列化技术<br>19、分布式服务治理<br>dubbo控制台及监控中心的安装部署<br>dubbo常用配置分析<br>dubbo实战演练<br>20、NIO技术之-Netty<br>NIO基本概念及BIO、AIO的对比分析<br>NIO核心设计思想剖析（Buffer/Channel..）<br>Netty产生的背景及优缺点分析<br>Netty实现IM聊天系统<br>21、分布式缓存技术-Redis<br>redis的安装及数据类型分析<br>Redis客户端的使用<br>Redis高可用方案实战<br>Redis+Lua脚本实现原子操作<br>22、高性能之道-MongoDB<br>MongoDB高可用部署<br>MongoDB动态查询及索引剖析<br>MongoDB集成spring应用<br>23、数据库高性能之道-Mysql<br>分库分表深入分析<br>Mysql主从模型配置/Mycat的使用<br>大家可以点击加入群：650385180<br>24、分布式通信技术<br>JMS基本概念和模型<br>ActiveMQ结合Spring开发<br>ActiveMQ静态网络和**络链接<br>Kafka的高可用方案及原理分析<br>25、SOA架构及微服务架构<br>什么是SOA架构/为什么需要SOA<br>领域驱动设计方法/典型SOA架构设计<br>spring boot深入剖析<br>spring boot+dubbo企业实战<br>26、Docker虚拟化技术<br>Docker虚拟化技术(镜像/仓库/容器)<br>Docker整合spring boot<br>Docker 服务编排<br>27、导流技术<br>Nginx反向代理、负载均衡<br>Nginx进程模型分析<br>Nginx+keepalived高可用方案<br>28、微服务技术<br>spring boot（mvc）<br>spring boot（REST）<br>spring boot(验证）<br>29、spring cloud<br>spring cloud config client<br>spring cloud config server<br>spring cloud netflix eureka<br>spring cloud netflix ribbon<br>spring cloud hystrix<br>spring cloud feign<br>spring cloud stream<br>spring cloud bus<br>spring cloud sleuth<br>30、分布式消息技术-kafka<br>kafka高可用集群及介绍<br>kafka底层实现原理分析<br>31、分布式缓存-redis<br>redis的数据类型分析<br>redis高可用集群方案<br>lua脚本在redis中的应用<br>32、高性能之道-MongoDB<br>MongoDB的基本原理<br>MongoDB常用命令及客户端使用<br>手写基于MongoDB的ORM框架<br>MongoDB高可用解决方案<br>33、数据库高性能-Mysql<br>分库分表深入分析及主从模型<br>数据库中间件Mycat介绍<br>34、性能优化专题<br>从测试的角度解读如何衡量性能<br>了解Linux系统<br>35、虚拟机-JVM<br>内存模型、运行时数据<br>垃圾回收、GC日志<br>调优实战<br>36、容器优化-Tomcat<br>tomcat架构分析<br>线程模型分析<br>tomcat调优实战<br>37、mysql数据库调优<br>Mysql底层存储分析</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;01、透彻理解Tomcat原理手写动静态资源的实现&lt;br&gt;02、分享能源领域的分布式监测系统架构&lt;br&gt;03、分布式系统关键技术Rpc框架详解与实现&lt;br&gt;04、自己写一个SpringMVC框架&lt;br&gt;05、使用Jsoup实现网页爬虫功能&lt;br&gt;06、JAVA高级进阶之NI
+      
+    
+    </summary>
+    
+    
+      <category term="Java学习" scheme="http://yoursite.com/categories/Java%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>电影随笔</title>
