@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-10T23:45:25.312Z</updated>
+  <updated>2020-05-25T09:08:16.217Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020工作学习计划</title>
+    <link href="http://yoursite.com/2020/05/25/2020%E5%B7%A5%E4%BD%9C%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
+    <id>http://yoursite.com/2020/05/25/2020工作学习计划/</id>
+    <published>2020-05-25T09:03:19.000Z</published>
+    <updated>2020-05-25T09:08:16.217Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>Java虚拟机，Jvm基础和调优等等</li><li>Dubbo和Spring Cloud微服务框架</li><li>微服务框架下，分布式锁和分布式事务</li><li>对应使用的中间件，RPC，数据库中间件，消息中间件</li><li>分布式事务2PC、3PC、TCC、最终一致性解决方案原理</li><li>Redis和Zookeeper</li><li>Elasticsreach+logstash+kibana</li><li>数据结构算法、设计模式</li><li>spring底层了解</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;Java虚拟机，Jvm基础和调优等等&lt;/li&gt;
+&lt;li&gt;Dubbo和Spring Cloud微服务框架&lt;/li&gt;
+&lt;li&gt;微服务框架下，分布式锁和分布式事务&lt;/li&gt;
+&lt;li&gt;对应使用的中间件，RPC，数据库中间件，消息中间件&lt;/li&gt;
+&lt;li&gt;分布式事务2PC
+      
+    
+    </summary>
+    
+    
+      <category term="计划" scheme="http://yoursite.com/categories/%E8%AE%A1%E5%88%92/"/>
+    
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>2020面试准备</title>
