@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="算法,">
 
 
 
@@ -88,17 +88,18 @@
 
 
 
-<meta name="description" content="Shadow的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="LeetCode.255题用队列实现栈  思考队列先进先出，栈先进后出 就肯定需要用多个队列模拟 两种实现方式： 实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。 实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素将队1刚pu">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode_255_队列实现栈">
+<meta property="og:url" content="http://yoursite.com/2020/06/20/leetcode-255-队列实现栈/index.html">
 <meta property="og:site_name" content="Shadow的个人博客">
-<meta property="og:description" content="Shadow的个人博客">
+<meta property="og:description" content="LeetCode.255题用队列实现栈  思考队列先进先出，栈先进后出 就肯定需要用多个队列模拟 两种实现方式： 实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。 实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素将队1刚pu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-19T02:13:58.307Z">
+<meta property="og:updated_time" content="2020-06-20T14:32:33.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
-<meta name="twitter:description" content="Shadow的个人博客">
+<meta name="twitter:title" content="leetcode_255_队列实现栈">
+<meta name="twitter:description" content="LeetCode.255题用队列实现栈  思考队列先进先出，栈先进后出 就肯定需要用多个队列模拟 两种实现方式： 实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。 实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素将队1刚pu">
 
 
 
@@ -128,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/">
+  <link rel="canonical" href="http://yoursite.com/2020/06/20/leetcode-255-队列实现栈/">
 
 
 
 
 
-  <title>分类 | Shadow的个人博客</title>
+  <title>leetcode_255_队列实现栈 | Shadow的个人博客</title>
   
 
 
@@ -261,40 +262,180 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/20/leetcode-255-队列实现栈/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="weshadow">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shadow的个人博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">分类</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 7 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java学习/">Java学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/人生目标/">人生目标</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/心路历程/">心路历程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计划/">计划</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/记事/">记事</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">leetcode_255_队列实现栈</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-20T22:15:22+08:00">
+                2020-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="LeetCode-255题"><a href="#LeetCode-255题" class="headerlink" title="LeetCode.255题"></a>LeetCode.255题</h2><h3 id="用队列实现栈"><a href="#用队列实现栈" class="headerlink" title="用队列实现栈"></a>用队列实现栈</h3><hr>
+<ol>
+<li>思考队列先进先出，栈先进后出</li>
+<li>就肯定需要用多个队列模拟</li>
+<li>两种实现方式：<ol>
+<li>实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。</li>
+<li>实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素将队1刚push的元素加入。如果有元素，将队2的元素依次出队加入到队1中，队1队2交换或者复制。出栈模拟时从队2出队。</li>
+</ol>
+</li>
+<li>扩展思考？ 用栈模拟队列操作</li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/15/2020-06-15/" rel="next" title="2020-06-15">
+                <i class="fa fa-chevron-left"></i> 2020-06-15
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/20/leetcode-1471/" rel="prev" title="leetcode_1471">
+                leetcode_1471 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -327,8 +468,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -411,6 +561,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode-255题"><span class="nav-number">1.</span> <span class="nav-text">LeetCode.255题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用队列实现栈"><span class="nav-number">1.1.</span> <span class="nav-text">用队列实现栈</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
