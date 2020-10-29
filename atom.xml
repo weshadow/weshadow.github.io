@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-21T12:09:52.206Z</updated>
+  <updated>2020-10-29T09:32:35.964Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NewtonJson.net空字符串处理</title>
+    <link href="http://yoursite.com/2020/10/29/NewtonJson-net%E7%A9%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/"/>
+    <id>http://yoursite.com/2020/10/29/NewtonJson-net空字符串处理/</id>
+    <published>2020-10-29T09:07:11.000Z</published>
+    <updated>2020-10-29T09:32:35.964Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="NewtonJson-net在序列化对象过程中，出现空字符串默认转换成null，而无法转换成-“”"><a href="#NewtonJson-net在序列化对象过程中，出现空字符串默认转换成null，而无法转换成-“”" class="headerlink" title="NewtonJson.net在序列化对象过程中，出现空字符串默认转换成null，而无法转换成(“”)"></a>NewtonJson.net在序列化对象过程中，出现空字符串默认转换成null，而无法转换成(“”)</h3><hr><h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><blockquote><p>首先自定义空字符串转换类，继承DefaultContractResolver，重写实现方法；</p></blockquote><pre><code>public class NullToEmptyStringResolver : Newtonsoft.Json.Serialization.DefaultContractResolver{    protected override IList&lt;JsonProperty&gt; CreateProperties(Type type, MemberSerialization memberSerialization)    {        return type.GetProperties()                .Select(p=&gt;{                    var jp = base.CreateProperty(p, memberSerialization);                    jp.ValueProvider = new NullToEmptyStringValueProvider(p);                    return jp;                }).ToList();    }}public class NullToEmptyStringValueProvider : IValueProvider{    PropertyInfo _MemberInfo;    public NullToEmptyStringValueProvider(PropertyInfo memberInfo)    {        _MemberInfo = memberInfo;    }    public object GetValue(object target)    {        object result =  _MemberInfo.GetValue(target);        if (_MemberInfo.PropertyType == typeof(string) &amp;&amp; result == null) result = &quot;&quot;;        return result;    }    public void SetValue(object target, object value)    {        _MemberInfo.SetValue(target, value);    }}</code></pre><blockquote><p>实际使用时：</p></blockquote><pre><code>var settings = new JsonSerializerSettings() { ContractResolver= new NullToEmptyStringResolver() };var str = JsonConvert.SerializeObject(yourObj, settings);</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;NewtonJson-net在序列化对象过程中，出现空字符串默认转换成null，而无法转换成-“”&quot;&gt;&lt;a href=&quot;#NewtonJson-net在序列化对象过程中，出现空字符串默认转换成null，而无法转换成-“”&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+    
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="代码笔记" scheme="http://yoursite.com/tags/%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>leetcode_1471</title>
