@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"blog.wusirun.info","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="给你一个整数数组 arr 和一个整数 k 。 设 m 为数组的中位数，只要满足下述两个前提之一，就可以判定 arr[i] 的值比 arr[j] 的值更强：  |arr[i] - m| &amp;gt; |arr[j] - m| |arr[i] - m| == |arr[j] - m|，且 arr[i] &amp;gt; arr[j]请返回由数组中最强的 k 个值组成的列表。答案可以以 任意顺序 返回。 中位数 是">
+  <meta name="description" content="题目 给你一个整数数组 arr 和一个整数 k 。设 m 为数组的中位数，只要满足下述两个前提之一，就可以判定 arr[i] 的值比 arr[j] 的值更强： |arr[i] - m| &amp;gt; |arr[j] - m| |arr[i] - m| == |arr[j] - m|，且 arr[i] &amp;gt; arr[j]请返回由数组中最强的 k 个值组成的列表。答案可以以 任意顺序 返回。中位数 是">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode_1471">
 <meta property="og:url" content="http://blog.wusirun.info/2020/06/20/leetcode-1471/index.html">
 <meta property="og:site_name" content="一介码农">
-<meta property="og:description" content="给你一个整数数组 arr 和一个整数 k 。 设 m 为数组的中位数，只要满足下述两个前提之一，就可以判定 arr[i] 的值比 arr[j] 的值更强：  |arr[i] - m| &amp;gt; |arr[j] - m| |arr[i] - m| == |arr[j] - m|，且 arr[i] &amp;gt; arr[j]请返回由数组中最强的 k 个值组成的列表。答案可以以 任意顺序 返回。 中位数 是">
+<meta property="og:description" content="题目 给你一个整数数组 arr 和一个整数 k 。设 m 为数组的中位数，只要满足下述两个前提之一，就可以判定 arr[i] 的值比 arr[j] 的值更强： |arr[i] - m| &amp;gt; |arr[j] - m| |arr[i] - m| == |arr[j] - m|，且 arr[i] &amp;gt; arr[j]请返回由数组中最强的 k 个值组成的列表。答案可以以 任意顺序 返回。中位数 是">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-02T09:20:30.345Z">
+<meta property="og:updated_time" content="2020-11-05T08:41:48.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode_1471">
-<meta name="twitter:description" content="给你一个整数数组 arr 和一个整数 k 。 设 m 为数组的中位数，只要满足下述两个前提之一，就可以判定 arr[i] 的值比 arr[j] 的值更强：  |arr[i] - m| &amp;gt; |arr[j] - m| |arr[i] - m| == |arr[j] - m|，且 arr[i] &amp;gt; arr[j]请返回由数组中最强的 k 个值组成的列表。答案可以以 任意顺序 返回。 中位数 是">
+<meta name="twitter:description" content="题目 给你一个整数数组 arr 和一个整数 k 。设 m 为数组的中位数，只要满足下述两个前提之一，就可以判定 arr[i] 的值比 arr[j] 的值更强： |arr[i] - m| &amp;gt; |arr[j] - m| |arr[i] - m| == |arr[j] - m|，且 arr[i] &amp;gt; arr[j]请返回由数组中最强的 k 个值组成的列表。答案可以以 任意顺序 返回。中位数 是">
 
 <link rel="canonical" href="http://blog.wusirun.info/2020/06/20/leetcode-1471/">
 
@@ -213,7 +213,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-02 17:20:30" itemprop="dateModified" datetime="2020-11-02T17:20:30+08:00">2020-11-02</time>
+                <time title="修改时间：2020-11-05 16:41:48" itemprop="dateModified" datetime="2020-11-05T16:41:48+08:00">2020-11-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -236,30 +236,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>给你一个整数数组 arr 和一个整数 k 。</p>
-<p>设 m 为数组的中位数，只要满足下述两个前提之一，就可以判定 arr[i] 的值比 arr[j] 的值更强：</p>
-<p> |arr[i] - m| &gt; |arr[j] - m|<br> |arr[i] - m| == |arr[j] - m|，且 arr[i] &gt; arr[j]<br>请返回由数组中最强的 k 个值组成的列表。答案可以以 任意顺序 返回。</p>
-<p>中位数 是一个有序整数列表中处于中间位置的值。形式上，如果列表的长度为 n ，那么中位数就是该有序列表（下标从 0 开始）中位于 ((n - 1) / 2) 的元素。</p>
-<p>例如 arr = [6, -3, 7, 2, 11]，n = 5：数组排序后得到 arr = [-3, 2, 6, 7, 11] ，数组的中间位置为 m = ((5 - 1) / 2) = 2 ，中位数 arr[m] 的值为 6 。<br>例如 arr = [-7, 22, 17, 3]，n = 4：数组排序后得到 arr = [-7, 3, 17, 22] ，数组的中间位置为 m = ((4 - 1) / 2) = 1 ，中位数 arr[m] 的值为 3 。</p>
-<p>示例 1：</p>
-<p>输入：arr = [1,2,3,4,5], k = 2<br>输出：[5,1]<br>解释：中位数为 3，按从强到弱顺序排序后，数组变为 [5,1,4,2,3]。最强的两个元素是 [5, 1]。[1, 5] 也是正确答案。<br>注意，尽管 |5 - 3| == |1 - 3| ，但是 5 比 1 更强，因为 5 &gt; 1 。<br>示例 2：</p>
-<p>输入：arr = [1,1,3,5,5], k = 2<br>输出：[5,5]<br>解释：中位数为 3, 按从强到弱顺序排序后，数组变为 [5,5,1,1,3]。最强的两个元素是 [5, 5]。<br>示例 3：</p>
-<p>输入：arr = [6,7,11,7,6,8], k = 5<br>输出：[11,8,6,6,7]<br>解释：中位数为 7, 按从强到弱顺序排序后，数组变为 [11,8,6,6,7,7]。<br>[11,8,6,6,7] 的任何排列都是正确答案。<br>示例 4：</p>
-<p>输入：arr = [6,-3,7,2,11], k = 3<br>输出：[-3,11,2]<br>示例 5：</p>
-<p>输入：arr = [-7,22,17,3], k = 2<br>输出：[22,17]</p>
-<p>提示：</p>
-<p>1 &lt;= arr.length &lt;= 10^5<br>-10^5 &lt;= arr[i] &lt;= 10^5<br>1 &lt;= k &lt;= arr.length</p>
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
+<p>给你一个整数数组 arr 和一个整数 k 。<br>设 m 为数组的中位数，只要满足下述两个前提之一，就可以判定 arr[i] 的值比 arr[j] 的值更强：<br> |arr[i] - m| &gt; |arr[j] - m|<br> |arr[i] - m| == |arr[j] - m|，且 arr[i] &gt; arr[j]<br>请返回由数组中最强的 k 个值组成的列表。答案可以以 任意顺序 返回。<br>中位数 是一个有序整数列表中处于中间位置的值。形式上，如果列表的长度为 n ，那么中位数就是该有序列表（下标从 0 开始）中位于 ((n - 1) / 2) 的元素。<br>例如 arr = [6, -3, 7, 2, 11]，n = 5：数组排序后得到 arr = [-3, 2, 6, 7, 11] ，数组的中间位置为 m = ((5 - 1) / 2) = 2 ，中位数 arr[m] 的值为 6 。<br>例如 arr = [-7, 22, 17, 3]，n = 4：数组排序后得到 arr = [-7, 3, 17, 22] ，数组的中间位置为 m = ((4 - 1) / 2) = 1 ，中位数 arr[m] 的值为 3 。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>示例 1：<br>输入：arr = [1,2,3,4,5], k = 2<br>输出：[5,1]<br>解释：中位数为 3，按从强到弱顺序排序后，数组变为 [5,1,4,2,3]。最强的两个元素是 [5, 1]。[1, 5] 也是正确答案。<br>注意，尽管 |5 - 3| == |1 - 3| ，但是 5 比 1 更强，因为 5 &gt; 1 。</p>
+</blockquote>
+<blockquote>
+<p>示例 2：<br>输入：arr = [1,1,3,5,5], k = 2<br>输出：[5,5]<br>解释：中位数为 3, 按从强到弱顺序排序后，数组变为 [5,5,1,1,3]。最强的两个元素是 [5, 5]。</p>
+</blockquote>
+<blockquote>
+<p>示例 3：<br>输入：arr = [6,7,11,7,6,8], k = 5<br>输出：[11,8,6,6,7]<br>解释：中位数为 7, 按从强到弱顺序排序后，数组变为 [11,8,6,6,7,7]。<br>[11,8,6,6,7] 的任何排列都是正确答案。</p>
+</blockquote>
+<blockquote>
+<p>示例 4：<br>输入：arr = [6,-3,7,2,11], k = 3<br>输出：[-3,11,2]</p>
+</blockquote>
+<blockquote>
+<p>示例 5：<br>输入：arr = [-7,22,17,3], k = 2<br>输出：[22,17]</p>
+</blockquote>
+<hr>
+<blockquote>
+<blockquote>
+<p>提示：<br>1 &lt;= arr.length &lt;= 10^5<br>-10^5 &lt;= arr[i] &lt;= 10^5<br>1 &lt;= k &lt;= arr.length</p>
+</blockquote>
+</blockquote>
+<hr>
 <p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/the-k-strongest-values-in-an-array" target="_blank" rel="noopener">https://leetcode-cn.com/problems/the-k-strongest-values-in-an-array</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
 <hr>
-<p>常规思路</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="常规思路"><a href="#常规思路" class="headerlink" title="常规思路"></a>常规思路</h4><blockquote>
 <ol>
 <li>先算出当前数组中位数 arr[(arr.length-1)/2]=?</li>
 <li>再循环比较，形成新的数组，然后取前k个值</li>
 </ol>
-<p>其他思路</p>
+</blockquote>
+<h4 id="其他思路"><a href="#其他思路" class="headerlink" title="其他思路"></a>其他思路</h4><blockquote>
 <ol>
 <li>发现每一位减去中位数中，越靠近中位数的绝对值越小（也就是题目的越弱），越靠近两端的值越大（也就是越强），是否可以将数组拆分成小于中位数数组和大于中位数数组，然后进行绝对值计算形成一个数组，可以减少比较次数？</li>
 </ol>
+</blockquote>
 
     </div>
 
@@ -362,6 +377,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题思路"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常规思路"><span class="nav-number">2.1.</span> <span class="nav-text">常规思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他思路"><span class="nav-number">2.2.</span> <span class="nav-text">其他思路</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -377,20 +393,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

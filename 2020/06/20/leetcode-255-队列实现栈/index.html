@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"blog.wusirun.info","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="LeetCode.255题用队列实现栈  思考队列先进先出，栈先进后出 就肯定需要用多个队列模拟 两种实现方式： 实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。 实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素将队1刚pu">
+  <meta name="description" content="LeetCode.255题解题思路用队列实现栈   思考队列先进先出，栈先进后出 就肯定需要用多个队列模拟 两种实现方式：  实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。 实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode_255_队列实现栈">
 <meta property="og:url" content="http://blog.wusirun.info/2020/06/20/leetcode-255-队列实现栈/index.html">
 <meta property="og:site_name" content="一介码农">
-<meta property="og:description" content="LeetCode.255题用队列实现栈  思考队列先进先出，栈先进后出 就肯定需要用多个队列模拟 两种实现方式： 实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。 实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素将队1刚pu">
+<meta property="og:description" content="LeetCode.255题解题思路用队列实现栈   思考队列先进先出，栈先进后出 就肯定需要用多个队列模拟 两种实现方式：  实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。 实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-02T09:24:09.157Z">
+<meta property="og:updated_time" content="2020-11-05T08:48:11.218Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode_255_队列实现栈">
-<meta name="twitter:description" content="LeetCode.255题用队列实现栈  思考队列先进先出，栈先进后出 就肯定需要用多个队列模拟 两种实现方式： 实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。 实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素将队1刚pu">
+<meta name="twitter:description" content="LeetCode.255题解题思路用队列实现栈   思考队列先进先出，栈先进后出 就肯定需要用多个队列模拟 两种实现方式：  实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。 实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素">
 
 <link rel="canonical" href="http://blog.wusirun.info/2020/06/20/leetcode-255-队列实现栈/">
 
@@ -213,7 +213,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-02 17:24:09" itemprop="dateModified" datetime="2020-11-02T17:24:09+08:00">2020-11-02</time>
+                <time title="修改时间：2020-11-05 16:48:11" itemprop="dateModified" datetime="2020-11-05T16:48:11+08:00">2020-11-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -236,17 +236,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="LeetCode-255题"><a href="#LeetCode-255题" class="headerlink" title="LeetCode.255题"></a>LeetCode.255题</h2><h3 id="用队列实现栈"><a href="#用队列实现栈" class="headerlink" title="用队列实现栈"></a>用队列实现栈</h3><hr>
+        <h3 id="LeetCode-255题"><a href="#LeetCode-255题" class="headerlink" title="LeetCode.255题"></a>LeetCode.255题</h3><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="用队列实现栈"><a href="#用队列实现栈" class="headerlink" title="用队列实现栈"></a>用队列实现栈</h4><hr>
+<blockquote>
 <ol>
 <li>思考队列先进先出，栈先进后出</li>
 <li>就肯定需要用多个队列模拟</li>
-<li>两种实现方式：<ol>
+<li>两种实现方式：<blockquote>
+<ol>
 <li>实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。</li>
 <li>实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素将队1刚push的元素加入。如果有元素，将队2的元素依次出队加入到队1中，队1队2交换或者复制。出栈模拟时从队2出队。</li>
 </ol>
+</blockquote>
 </li>
 <li>扩展思考？ 用栈模拟队列操作</li>
 </ol>
+</blockquote>
 
     </div>
 
@@ -349,7 +353,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode-255题"><span class="nav-number">1.</span> <span class="nav-text">LeetCode.255题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用队列实现栈"><span class="nav-number">1.1.</span> <span class="nav-text">用队列实现栈</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeetCode-255题"><span class="nav-number">1.</span> <span class="nav-text">LeetCode.255题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题思路"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用队列实现栈"><span class="nav-number">2.1.</span> <span class="nav-text">用队列实现栈</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -365,20 +369,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
