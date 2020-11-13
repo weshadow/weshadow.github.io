@@ -180,6 +180,100 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2020/11/13/记一次Java和-Net的Byte类型差异/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Shadow">
+      <meta itemprop="description" content="记录生活点滴，记录步步前进">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一介码农">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/13/记一次Java和-Net的Byte类型差异/" class="post-title-link" itemprop="url">记一次Java和.Net的Byte类型差异</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-13 13:39:10 / 修改时间：14:17:01" itemprop="dateCreated datePublished" datetime="2020-11-13T13:39:10+08:00">2020-11-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><blockquote>
+<p>主要是在一次需要使用到XJWT一种特殊的jwt实现上遇到的问题。因为原库没有.net实现版本(<a href="https://github.com/softtouchit/xjwt" target="_blank" rel="noopener">GitHub上XJwt地址</a>)<br>所以自己实现了一份，在复刻这个库的时候发现Java和.Net中Byte基础类型又一个差别：<br>Java Byte类型 [-127~128]之间<br>.Net(c#) Byte类型 [0~255]之间<br>另外：Java在提供网络传输默认使用的是Big_Endian。<a href="https://baike.baidu.com/item/Endian" target="_blank" rel="noopener">Endian百度百科</a><br>.Net(c#)中默认是使用的Little_Endian，从而会导致SHA256加密，网络相互传输过程中数据不能互通。</p>
+</blockquote>
+<h4 id="c-如何与Java-Byte类型对应？"><a href="#c-如何与Java-Byte类型对应？" class="headerlink" title="c#如何与Java Byte类型对应？"></a>c#如何与Java Byte类型对应？</h4><blockquote>
+<p>在C#中可以使用sByte类型去和Java的Byte类型对应</p>
+</blockquote>
+<h4 id="如何对应Java中的Base64-Decode和Base64-Encode编码？"><a href="#如何对应Java中的Base64-Decode和Base64-Encode编码？" class="headerlink" title="如何对应Java中的Base64.Decode和Base64.Encode编码？"></a>如何对应Java中的Base64.Decode和Base64.Encode编码？</h4><blockquote>
+<p>Java Base64.Decode:<br>C#对应代码：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// Java Base64.getEncoder().encode(byte[])</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;param name=&quot;_&quot;&gt;&lt;/param&gt;</span><br><span class="line">/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">public static byte[] EncoderJavaBase64(this byte[] _)</span><br><span class="line">&#123;</span><br><span class="line">    return Encoding.UTF8.GetBytes(Convert.ToBase64String(_));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Java Base64.Encode:<br>C#对应代码：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// Java Base64.getDecoder().decode(byte[])</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;param name=&quot;_&quot;&gt;&lt;/param&gt;</span><br><span class="line">/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">public static byte[] DecoderJavaBase64(this byte[] _)</span><br><span class="line">&#123;</span><br><span class="line">    return Convert.FromBase64String(Encoding.UTF8.GetString(_));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="如何实现Java方法Long转Byte"><a href="#如何实现Java方法Long转Byte" class="headerlink" title="如何实现Java方法Long转Byte"></a>如何实现Java方法Long转Byte</h4><blockquote>
+<p>C#代码：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// long转sbyte字节</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;param name=&quot;_long&quot;&gt;&lt;/param&gt;</span><br><span class="line">/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">public static sbyte[] ToJavaByteArray(this long _)</span><br><span class="line">&#123;</span><br><span class="line">    sbyte[] result = new sbyte[sizeof(long)];</span><br><span class="line">    for (int i = 0; i &lt; result.Length; i++)</span><br><span class="line">        result[i] = (sbyte)((_ &gt;&gt; (8 * i)) &amp; 0xFF);</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="C-实现大小端-Big-Endian-Little-Endian-转换"><a href="#C-实现大小端-Big-Endian-Little-Endian-转换" class="headerlink" title="C#实现大小端(Big_Endian/Little_Endian)转换"></a>C#实现大小端(Big_Endian/Little_Endian)转换</h4><blockquote>
+<p>C#代码：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 大端小端转换</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;param name=&quot;_&quot;&gt;&lt;/param&gt;</span><br><span class="line">/// &lt;param name=&quot;order&quot;&gt;&lt;/param&gt;</span><br><span class="line">/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">public static byte[] Order(this byte[] _, ByteOrder order)</span><br><span class="line">&#123;</span><br><span class="line">    //默认是否是小端，</span><br><span class="line">    if ((BitConverter.IsLittleEndian &amp;&amp; order == ByteOrder.BIG_ENDIAN) ||</span><br><span class="line">        (!BitConverter.IsLittleEndian &amp;&amp; order == ByteOrder.LITTLE_ENDIAN))</span><br><span class="line">        Array.Reverse(_);</span><br><span class="line">    return _;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="C-如何随机生成Long"><a href="#C-如何随机生成Long" class="headerlink" title="C#如何随机生成Long"></a>C#如何随机生成Long</h4><blockquote>
+<p>C#代码：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 随机生成Long</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;param name=&quot;_&quot;&gt;&lt;/param&gt;</span><br><span class="line">/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">public static long NextLong(this Random _)</span><br><span class="line">&#123;</span><br><span class="line">    var key = _.NextDouble();</span><br><span class="line">    return (long)Math.Floor(key * 10000000D);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="最后记录下自己完成的XJwt库"><a href="#最后记录下自己完成的XJwt库" class="headerlink" title="最后记录下自己完成的XJwt库"></a>最后记录下自己完成的XJwt库</h4><p><a href="https://github.com/weshadow/XJwt.Net" target="_blank" rel="noopener">源码地址</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2020/11/05/亿发软件项目思维导图/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -289,10 +383,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-03 10:17:51 / 修改时间：10:20:41" itemprop="dateCreated datePublished" datetime="2020-11-03T10:17:51+08:00">2020-11-03</time>
+              <time title="创建时间：2020-11-03 10:17:51" itemprop="dateCreated datePublished" datetime="2020-11-03T10:17:51+08:00">2020-11-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-13 14:19:09" itemprop="dateModified" datetime="2020-11-13T14:19:09+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -316,7 +416,9 @@
       
           <h3 id="2020-11-03"><a href="#2020-11-03" class="headerlink" title="2020.11.03"></a>2020.11.03</h3><ol>
 <li>私活阿里云短信对接</li>
-<li>.net core框架自定义权限</li>
+<li>.net core框架自定义权限<h3 id="2020-11-13"><a href="#2020-11-13" class="headerlink" title="2020.11.13"></a>2020.11.13</h3></li>
+<li>.net core 3.1升级到 .net5</li>
+<li>VUE+Element UI 的权限系统</li>
 </ol>
 
       
@@ -946,82 +1048,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2019/09/18/开篇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Shadow">
-      <meta itemprop="description" content="记录生活点滴，记录步步前进">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一介码农">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/18/开篇/" class="post-title-link" itemprop="url">开篇-我的个人博客开张了!</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-18 16:30:11" itemprop="dateCreated datePublished" datetime="2019-09-18T16:30:11+08:00">2019-09-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-10 17:26:21" itemprop="dateModified" datetime="2020-01-10T17:26:21+08:00">2020-01-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心路历程/" itemprop="url" rel="index"><span itemprop="name">心路历程</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="想写点东西"><a href="#想写点东西" class="headerlink" title="想写点东西"></a>想写点东西</h3><p>&nbsp;&nbsp;从参加工作,到后来加入博客园这么多年的时间其实一直就想将自己经历和所学慢慢整理记录下来.做成自己的博客查阅,但是一直也没能有动力去实现它.<br>&nbsp;&nbsp;到现在来说博客已经见怪不怪了,方便快捷,而且也越来越多元化.身为一个从业这么多年的码农,此时更想把自己所学慢慢整理记录起来.<br>这也就是说~我的博客开张啦~</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1088,7 +1119,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
