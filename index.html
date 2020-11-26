@@ -180,6 +180,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2020/11/17/第一次群晖NAS使用和服务器搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Shadow">
+      <meta itemprop="description" content="记录生活点滴，记录步步前进">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一介码农">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/17/第一次群晖NAS使用和服务器搭建/" class="post-title-link" itemprop="url">第一次群晖NAS使用和服务器搭建</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-17 13:45:28" itemprop="dateCreated datePublished" datetime="2020-11-17T13:45:28+08:00">2020-11-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-26 14:44:22" itemprop="dateModified" datetime="2020-11-26T14:44:22+08:00">2020-11-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/硬件运维/" itemprop="url" rel="index"><span itemprop="name">硬件运维</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="为什么选择群晖？"><a href="#为什么选择群晖？" class="headerlink" title="为什么选择群晖？"></a>为什么选择群晖？</h3><p>也是一些机缘巧合之下，听到了群晖NAS这个产品。自己也是做了多年开发，而且云产品的服务器也将要到期。不如试试群晖来搭建自己需要的服务器？<br>回归正题为啥看上了群晖？</p>
+<ol>
+<li>作为多年的研发玩家，服务器还是比较必须的。而有自己的机器更加自由。</li>
+<li>现在的群晖DSM系统已经比较完善（没有了解过黑群晖，比较懒不想折腾），带 + 的型号全部都支持docker，这让群晖不仅仅只是文件服务器、云盘、网站，可玩性特别高。</li>
+<li>提供了quickconnection方便任何地方管理你的NAS，说白了还是看上了正版群晖的服务。当然黑群晖也是非常不错的。</li>
+</ol>
+<h3 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h3><p>自己的资金和日常需求也并不是要求很高，所以综合之下最后选了220+，算是比较亲民的在某东双11还能减免400+。所以其他渠道就没考虑了。</p>
+<h3 id="硬盘和内存升级"><a href="#硬盘和内存升级" class="headerlink" title="硬盘和内存升级"></a>硬盘和内存升级</h3><p>硬盘不用多说，因为是组raid阵列，最好是双硬盘同样大小，系统基本上都能支持。<br>内存是参考了许久，因为官方给出的220+是最大内存只支持6g，感觉过于的小。但是论坛贴吧等都说内存不止，甚至有单加16g的大佬。<br>而且基本上某东上买三星的内存都能支持。所以我是加了三星8g内存，能够正常识别，也没有使用上的问题。感觉不错。</p>
+<h3 id="内网服务器搭建，docker使用"><a href="#内网服务器搭建，docker使用" class="headerlink" title="内网服务器搭建，docker使用"></a>内网服务器搭建，docker使用</h3><p>既然是选择了群晖带 + 型号，当然更多的是看上了Docker方面。当我拿到手时也是毫不犹豫的选择安装了Docker套件，没有任何意外所有渠道的容器镜像是都能支持的，而且自带了Docker hub源等，特别方便。<br>至于容器的端口映射和如何访问，Docker命令特别多，资料丰富。就不详细说了。</p>
+<h3 id="外网搭建条件，和一些内网穿透办法"><a href="#外网搭建条件，和一些内网穿透办法" class="headerlink" title="外网搭建条件，和一些内网穿透办法"></a>外网搭建条件，和一些内网穿透办法</h3><p>对于搭建服务器，更多的当然是希望能够任何地方都能够使用到。原本的群晖NAS就是能够达到这样的目的，但是也是有一定的条件的。</p>
+<ol>
+<li><p>最方便的就是拥有一个公网IP</p>
+</li>
+<li><p>内网穿透产品</p>
+</li>
+</ol>
+<ol start="3">
+<li>公网服务器做端口反向代理<br>使用公网VPS+FRP内网穿透工具，实现群晖NAS服务器公网访问。<br>在拥有公网地址的VPS服务器上安装FRPS，修改好对应的frps.ini服务配置信息，开始后台静默启动。（这部分有一键服务端脚本<a href="https://www.ddayh.com/1433.html" target="_blank" rel="noopener">一键脚本</a>）<br>而frps配置和其原理使用参考<a href="https://gofrp.org/" target="_blank" rel="noopener">gofrp官网</a><br>里面既有frps配置的详细解释，还有frpc（frp client）配置方式。<br>剩下的就是在群晖NAS中开启frpc连通frps实现端口代理公网访问。</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2020/11/13/记一次Java和-Net的Byte类型差异/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -975,79 +1067,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2019/09/20/2019年读书笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Shadow">
-      <meta itemprop="description" content="记录生活点滴，记录步步前进">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一介码农">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/20/2019年读书笔记/" class="post-title-link" itemprop="url">2019年读书笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-20 13:54:20" itemprop="dateCreated datePublished" datetime="2019-09-20T13:54:20+08:00">2019-09-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-02 17:23:58" itemprop="dateModified" datetime="2020-11-02T17:23:58+08:00">2020-11-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/阅读/" itemprop="url" rel="index"><span itemprop="name">阅读</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="《未来简史》"><a href="#《未来简史》" class="headerlink" title="《未来简史》"></a>《未来简史》</h4><h4 id="《断舍离》-nbsp-nbsp-2019更早"><a href="#《断舍离》-nbsp-nbsp-2019更早" class="headerlink" title="《断舍离》&nbsp;&nbsp;2019更早"></a>《断舍离》&nbsp;&nbsp;2019更早</h4><h4 id="《人类简史》-nbsp-nbsp-2019-09-23"><a href="#《人类简史》-nbsp-nbsp-2019-09-23" class="headerlink" title="《人类简史》&nbsp;&nbsp;2019-09-23"></a>《人类简史》&nbsp;&nbsp;2019-09-23</h4><h4 id="《未来简史》-1"><a href="#《未来简史》-1" class="headerlink" title="《未来简史》"></a>《未来简史》</h4><h4 id="《大话数据结构》"><a href="#《大话数据结构》" class="headerlink" title="《大话数据结构》"></a>《大话数据结构》</h4><h4 id="《可复制的领导力》"><a href="#《可复制的领导力》" class="headerlink" title="《可复制的领导力》"></a>《可复制的领导力》</h4>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1119,20 +1138,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
