@@ -180,6 +180,224 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2021/01/08/Jenkins新版本windows踩坑记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Shadow">
+      <meta itemprop="description" content="记录生活点滴，记录步步前进">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一介码农">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/08/Jenkins新版本windows踩坑记录/" class="post-title-link" itemprop="url">Jenkins新版本windows踩坑记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-08 14:10:13 / 修改时间：14:24:21" itemprop="dateCreated datePublished" datetime="2021-01-08T14:10:13+08:00">2021-01-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/运维/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Jenkins-Windows下使用（2-263-3以上版本）问题"><a href="#Jenkins-Windows下使用（2-263-3以上版本）问题" class="headerlink" title="Jenkins Windows下使用（2.263.3以上版本）问题"></a>Jenkins Windows下使用（2.263.3以上版本）问题</h3><blockquote>
+<blockquote>
+<p>此次因为项目重新部署了服务器，所以持续集成、项目数据库、项目代码都需要迁移。<br>但是发现在迁移过程中，新版本的Jenkins在windows下运行问题多多（不知道官方是怎么发布出来的）<br>我从jenkins 2.263.3版本换到2.274版本全都试过，不是windows安装后插件无法更新就是根据网上的配置修改了UpdateCenter的Https地址后<br>Git插件无法下载，插件即便是下载下来由于我用的Gitee，代码也无法克隆等一系列问题。</p>
+</blockquote>
+</blockquote>
+<h3 id="如何解决新版本一系列问题"><a href="#如何解决新版本一系列问题" class="headerlink" title="如何解决新版本一系列问题"></a>如何解决新版本一系列问题</h3><blockquote>
+<blockquote>
+<p>当我发现这些问题后，在网上找资料，修改过UpdateCenter、修改过插件default.json的地址配置，一切都是徒劳，问题越用越多。<br>我觉得使用正常的安装模式已经是很难达到我的使用要求。所以找了另类的一套方案。<br>我的目的很简单，只要jenkins对应我需要的插件能在windows服务器上正常的使用<br>而且docker单独部署还需要跨容器访问，这块我暂时没有接触过，对于未知也是有一定的部署和学习风险。所以不使用这样的方案。<br>第一步，因为我旧服务器使用的是2.176版本，属于旧版本，但是能正常使用，而唯一的不同是每次登陆都会有一大堆的插件不兼容问题。<br>然后我将Jenkins根目录下的plus插件全部压缩打包，在官网同时又下载了最新的2.263.3的War包。<br>将他们放到了新的服务器中。<br>第二步，在新的服务器中继续使用2.176版本的安装包，安装非常快，安装完成后，我将plus插件压缩包解压放到的jenkins目录中<br>将war包也解压缩覆盖了Jenkins主目录的文件。<br>然后打开localhost:8080端口jenkins，同样查找默认密码登陆<br>发现登陆后可以正常搜索插件（只有部分插件无法更新），进入系统后，点击了jenkins本地更新，更新到2.263.3版本重启。<br>重启登陆后，更新必要的插件，发现一切都如同旧版本一样在2.263.3版本下持续集成毫无问题。</p>
+</blockquote>
+</blockquote>
+<hr>
+<p>此新版jenkins在windows上部署安装，git获取代码发布困扰了我整整3天，此方案也是突发奇想发现的，所以特意记下来，希望将来jenkins在新的后续版本中能够使用更加的方便。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2021/01/08/ABP框架搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Shadow">
+      <meta itemprop="description" content="记录生活点滴，记录步步前进">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一介码农">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/08/ABP框架搭建/" class="post-title-link" itemprop="url">ABP框架搭建</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-08 14:09:47 / 修改时间：14:25:09" itemprop="dateCreated datePublished" datetime="2021-01-08T14:09:47+08:00">2021-01-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ABP/" itemprop="url" rel="index"><span itemprop="name">ABP</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="ABP框架结构解释"><a href="#ABP框架结构解释" class="headerlink" title="ABP框架结构解释"></a>ABP框架结构解释</h3><img src="/images/layered-project-dependencies.png'" abp框架结构图"" class="xmind">
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2021/01/08/炒股谨记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Shadow">
+      <meta itemprop="description" content="记录生活点滴，记录步步前进">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一介码农">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/08/炒股谨记/" class="post-title-link" itemprop="url">炒股谨记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-08 11:06:15 / 修改时间：14:26:07" itemprop="dateCreated datePublished" datetime="2021-01-08T11:06:15+08:00">2021-01-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/股票/" itemprop="url" rel="index"><span itemprop="name">股票</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li>操作的注意事项<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">每天10:30 和下午的14:30是最佳的操作时间点（经过几年反复研究发现）</span><br><span class="line">10:30 当天走势基本确定，合适做卖出操作。</span><br><span class="line">在10:30之前不合适卖出，可以做买入</span><br><span class="line">14:30 是尾盘稳定时间点，可以做建仓或者清仓操作</span><br></pre></td></tr></table></figure></li>
+<li>心态怎么调整<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果失误或者操作失败如何调整心态？</span><br><span class="line">第一，过去的始终过去，问题是如何挽救</span><br><span class="line">第二，不要心急去操作，明白价位才是最重要的，没有重大的事件，价位始终是高低浮动。</span><br></pre></td></tr></table></figure></li>
+<li>开盘前定好心里价位、走势、整体趋势<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">每天9点开盘前，查看自己持仓的股票，走势是弱势、强势、价位过高、过低？进行评估</span><br><span class="line">然后心里预测未来是否可以守住，如果需要出，是大概盈利多少出，亏损多少卖</span><br><span class="line">心里留个预期和底线。</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2020/11/17/第一次群晖NAS使用和服务器搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -389,10 +607,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-05 12:39:29 / 修改时间：16:36:46" itemprop="dateCreated datePublished" datetime="2020-11-05T12:39:29+08:00">2020-11-05</time>
+              <time title="创建时间：2020-11-05 12:39:29" itemprop="dateCreated datePublished" datetime="2020-11-05T12:39:29+08:00">2020-11-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-08 14:25:37" itemprop="dateModified" datetime="2021-01-08T14:25:37+08:00">2021-01-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -414,7 +638,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="亿发软件整理功能说明和思维导图"><a href="#亿发软件整理功能说明和思维导图" class="headerlink" title="亿发软件整理功能说明和思维导图"></a>亿发软件整理功能说明和思维导图</h3><img src="/images/亿发软件.png" class="xmind" title="亿发软件项目思维导图" alt="亿发软件项目思维导图">
+          <h3 id="亿发软件整理功能说明和思维导图"><a href="#亿发软件整理功能说明和思维导图" class="headerlink" title="亿发软件整理功能说明和思维导图"></a>亿发软件整理功能说明和思维导图</h3><img src="/images/亿发软件.png" class="xmind" title="亿发软件项目思维导图">
 <hr>
 <h3 id="亿发软件各个功能模块"><a href="#亿发软件各个功能模块" class="headerlink" title="亿发软件各个功能模块"></a>亿发软件各个功能模块</h3><blockquote>
 <p>不明白的地方如下：</p>
@@ -808,265 +1032,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2020/05/25/2020工作学习计划/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Shadow">
-      <meta itemprop="description" content="记录生活点滴，记录步步前进">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一介码农">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/25/2020工作学习计划/" class="post-title-link" itemprop="url">2020工作学习计划</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-25 17:03:19" itemprop="dateCreated datePublished" datetime="2020-05-25T17:03:19+08:00">2020-05-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-30 11:55:55" itemprop="dateModified" datetime="2020-10-30T11:55:55+08:00">2020-10-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心路历程/" itemprop="url" rel="index"><span itemprop="name">心路历程</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>Java虚拟机，Jvm基础和调优等等</li>
-<li>Dubbo和Spring Cloud微服务框架</li>
-<li>微服务框架下，分布式锁和分布式事务</li>
-<li>对应使用的中间件，RPC，数据库中间件，消息中间件</li>
-<li>分布式事务2PC、3PC、TCC、最终一致性解决方案原理</li>
-<li>Redis和Zookeeper</li>
-<li>Elasticsreach+logstash+kibana</li>
-<li>数据结构算法、设计模式</li>
-<li>spring底层了解</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2020/05/05/2020面试准备/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Shadow">
-      <meta itemprop="description" content="记录生活点滴，记录步步前进">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一介码农">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/05/2020面试准备/" class="post-title-link" itemprop="url">2020面试准备</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-05 19:51:18" itemprop="dateCreated datePublished" datetime="2020-05-05T19:51:18+08:00">2020-05-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-30 11:56:03" itemprop="dateModified" datetime="2020-10-30T11:56:03+08:00">2020-10-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心路历程/" itemprop="url" rel="index"><span itemprop="name">心路历程</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>01、透彻理解Tomcat原理手写动静态资源的实现<br>02、分享能源领域的分布式监测系统架构<br>03、分布式系统关键技术Rpc框架详解与实现<br>04、自己写一个SpringMVC框架<br>05、使用Jsoup实现网页爬虫功能<br>06、JAVA高级进阶之NIO通信架构原理详解<br>07、高手必过之路透彻理解Spring容器IOC的原理分析<br>08、并发编程之深入业务隔离场景原理详解<br>09、深入浅出Java虚拟机<br>10、源码分析之手写MyBatis<br>11、大型分布式服务治理技术-Dubbo企业级实战<br>12、大流量高并发之限流特技<br>13、深入分析热部署机制的原理实现<br>14、高性能反向代理服务器Nginx-动静分离实战<br>15、架构师必备技能之Spring MVC框架原理解析<br>下面为系统的学习方向<br>01、maven的使用<br>maven的使用入门<br>maven私服的搭建及部署<br>maven坐标分析/父控设置<br>02、git版本管理及jenkins自动化构建<br>git使用入门培训<br>git常用命令分析和使用<br>jenkins环境搭建及插件配置<br>git+jenkins实现自动化构建<br>03、NoSql专题-redis高性能缓存<br>redis使用入门<br>redis常用命令及客户端的使用<br>redis高可用集群搭建<br>04、NoSql专题-mongodb<br>mongodb使用入门<br>mongodb高可用集群搭建<br>mongodb常用命令及客户端的使用<br>05、分布式专题-zookeeper+dubbo服务协调<br>zookeeper安装部署及命令分析<br>zookeeper客户端的使用<br>zookeeper实现原理分析<br>dubbo的使用入门及配置分析<br>zookeeper+dubbo实现服务注册和发现<br>06、分布式专题-消息中间件<br>activeMq-jms规范及使用<br>activeMq消息分发机制分析<br>kafka实现原理剖析<br>kafka的数据传输事务性及实践练习<br>07、分布式缓存分析对比<br>memcache的原理分析及使用<br>memcache和redis的横向对比分析<br>分布式接口技术<br>webservice/RMI/restful的使用<br>09、高并发专题-数据库层面优化<br>分库分表的原理及规则讲解<br>数据库主备及高可用<br>10、性能调优专题-jvm调优<br>JVM原理剖析<br>jvm内存模型及垃圾回收器的分析<br>11、性能调优专题-容器性能优化<br>nginx性能优化<br>tomcat性能优化<br>12、性能调优专题-数据库优化<br>mysql常见优化手段分析及实践<br>13、高性能容器的使用<br>nginx使用入门<br>nginx负载均衡/反向代理实现<br>14、双十一专题-九阳真经<br>太极聚气之分布式压测平台<br>氤氲紫气之分布式缓存体系<br>盘龙真诀之分布式消息系统<br>金刚之躯之分布式跟踪系统<br>外功辅助之分布式配置系统<br>15、微服务架构技术栈分析<br>springboot的使用<br>16、分布式协调服务zookeeper<br>zookeeper集群及相关概念分析<br>zookeeper java api的使用及实践<br>17、从集中式到分布式架构<br>分布式架构的演进过程<br>分布式架构的基石-TCP/UDP<br>18、分布式通信协议<br>分布式通信协议-HTTP及RESTful<br>分布式通信协议-webservice详解<br>分布式通信协议-RMI<br>分布式通信协议-序列化技术<br>19、分布式服务治理<br>dubbo控制台及监控中心的安装部署<br>dubbo常用配置分析<br>dubbo实战演练<br>20、NIO技术之-Netty<br>NIO基本概念及BIO、AIO的对比分析<br>NIO核心设计思想剖析（Buffer/Channel..）<br>Netty产生的背景及优缺点分析<br>Netty实现IM聊天系统<br>21、分布式缓存技术-Redis<br>redis的安装及数据类型分析<br>Redis客户端的使用<br>Redis高可用方案实战<br>Redis+Lua脚本实现原子操作<br>22、高性能之道-MongoDB<br>MongoDB高可用部署<br>MongoDB动态查询及索引剖析<br>MongoDB集成spring应用<br>23、数据库高性能之道-Mysql<br>分库分表深入分析<br>Mysql主从模型配置/Mycat的使用<br>大家可以点击加入群：650385180<br>24、分布式通信技术<br>JMS基本概念和模型<br>ActiveMQ结合Spring开发<br>ActiveMQ静态网络和**络链接<br>Kafka的高可用方案及原理分析<br>25、SOA架构及微服务架构<br>什么是SOA架构/为什么需要SOA<br>领域驱动设计方法/典型SOA架构设计<br>spring boot深入剖析<br>spring boot+dubbo企业实战<br>26、Docker虚拟化技术<br>Docker虚拟化技术(镜像/仓库/容器)<br>Docker整合spring boot<br>Docker 服务编排<br>27、导流技术<br>Nginx反向代理、负载均衡<br>Nginx进程模型分析<br>Nginx+keepalived高可用方案<br>28、微服务技术<br>spring boot（mvc）<br>spring boot（REST）<br>spring boot(验证）<br>29、spring cloud<br>spring cloud config client<br>spring cloud config server<br>spring cloud netflix eureka<br>spring cloud netflix ribbon<br>spring cloud hystrix<br>spring cloud feign<br>spring cloud stream<br>spring cloud bus<br>spring cloud sleuth<br>30、分布式消息技术-kafka<br>kafka高可用集群及介绍<br>kafka底层实现原理分析<br>31、分布式缓存-redis<br>redis的数据类型分析<br>redis高可用集群方案<br>lua脚本在redis中的应用<br>32、高性能之道-MongoDB<br>MongoDB的基本原理<br>MongoDB常用命令及客户端使用<br>手写基于MongoDB的ORM框架<br>MongoDB高可用解决方案<br>33、数据库高性能-Mysql<br>分库分表深入分析及主从模型<br>数据库中间件Mycat介绍<br>34、性能优化专题<br>从测试的角度解读如何衡量性能<br>了解Linux系统<br>35、虚拟机-JVM<br>内存模型、运行时数据<br>垃圾回收、GC日志<br>调优实战<br>36、容器优化-Tomcat<br>tomcat架构分析<br>线程模型分析<br>tomcat调优实战<br>37、mysql数据库调优<br>Mysql底层存储分析</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2020/02/05/2020年读书笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Shadow">
-      <meta itemprop="description" content="记录生活点滴，记录步步前进">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一介码农">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/05/2020年读书笔记/" class="post-title-link" itemprop="url">2020年读书笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-05 10:17:27" itemprop="dateCreated datePublished" datetime="2020-02-05T10:17:27+08:00">2020-02-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-02 17:21:40" itemprop="dateModified" datetime="2020-11-02T17:21:40+08:00">2020-11-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/阅读/" itemprop="url" rel="index"><span itemprop="name">阅读</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="2020年-读书笔记"><a href="#2020年-读书笔记" class="headerlink" title="2020年 读书笔记"></a>2020年 读书笔记</h2><h4 id="《漫画算法》-2020-05-10"><a href="#《漫画算法》-2020-05-10" class="headerlink" title="《漫画算法》 2020-05-10"></a>《漫画算法》 2020-05-10</h4><blockquote>
-<ol>
-<li>时间复杂度与空间复杂度分析</li>
-<li>逻辑结构和物理结构</li>
-<li>基本逻辑结构：数组、链表、栈、队列、哈希表（散列表）、树、二叉树（二叉排序树、二叉平衡树、多叉树、B树、B+树、B*树）、图</li>
-<li>基础算法<ol>
-<li>排序算法：</li>
-<li>查找算法：</li>
-<li>其他有意思的算法：</li>
-</ol>
-</li>
-<li></li>
-</ol>
-</blockquote>
-<h4 id="《高可用可伸缩为服务架构》"><a href="#《高可用可伸缩为服务架构》" class="headerlink" title="《高可用可伸缩为服务架构》"></a>《高可用可伸缩为服务架构》</h4><blockquote>
-<ol>
-<li>什么是微服务架构？</li>
-<li>微服务架构体系的优缺点：</li>
-<li>什么是驱动领域设计？</li>
-<li>如何去做驱动领域设计？</li>
-<li>Dubbo框架</li>
-<li>Spring Cloud 框架体系</li>
-</ol>
-</blockquote>
-<h4 id="《深入理解Java虚拟机》"><a href="#《深入理解Java虚拟机》" class="headerlink" title="《深入理解Java虚拟机》"></a>《深入理解Java虚拟机》</h4><ol>
-<li>GC垃圾回收机制和过程</li>
-</ol>
-<h4 id="《剑指offer》"><a href="#《剑指offer》" class="headerlink" title="《剑指offer》"></a>《剑指offer》</h4><h4 id="《离散数学及应用》"><a href="#《离散数学及应用》" class="headerlink" title="《离散数学及应用》"></a>《离散数学及应用》</h4><h4 id="《逆商》"><a href="#《逆商》" class="headerlink" title="《逆商》"></a>《逆商》</h4><h4 id="《消息中间件》"><a href="#《消息中间件》" class="headerlink" title="《消息中间件》"></a>《消息中间件》</h4><h4 id="《人间失格》"><a href="#《人间失格》" class="headerlink" title="《人间失格》"></a>《人间失格》</h4><hr>
-<h4 id="《-net-core-Rustful》"><a href="#《-net-core-Rustful》" class="headerlink" title="《.net core Rustful》"></a>《.net core Rustful》</h4>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1138,20 +1103,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1183,7 +1148,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
