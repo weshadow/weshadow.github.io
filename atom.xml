@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.wusirun.info/"/>
-  <updated>2021-01-08T06:24:21.969Z</updated>
+  <updated>2021-01-22T06:13:41.265Z</updated>
   <id>http://blog.wusirun.info/</id>
   
   <author>
@@ -17,13 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2021年读书笔记</title>
+    <link href="http://blog.wusirun.info/2021/01/22/2021%E5%B9%B4%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://blog.wusirun.info/2021/01/22/2021%E5%B9%B4%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-01-22T06:12:31.000Z</published>
+    <updated>2021-01-22T06:13:41.265Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="《算法》第四版"><a href="#《算法》第四版" class="headerlink" title="《算法》第四版"></a>《算法》第四版</h3><p>### </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;《算法》第四版&quot;&gt;&lt;a href=&quot;#《算法》第四版&quot; class=&quot;headerlink&quot; title=&quot;《算法》第四版&quot;&gt;&lt;/a&gt;《算法》第四版&lt;/h3&gt;&lt;p&gt;### &lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="阅读" scheme="http://blog.wusirun.info/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="读书笔记" scheme="http://blog.wusirun.info/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Jenkins新版本windows踩坑记录</title>
     <link href="http://blog.wusirun.info/2021/01/08/Jenkins%E6%96%B0%E7%89%88%E6%9C%ACwindows%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
     <id>http://blog.wusirun.info/2021/01/08/Jenkins%E6%96%B0%E7%89%88%E6%9C%ACwindows%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</id>
     <published>2021-01-08T06:10:13.000Z</published>
-    <updated>2021-01-08T06:24:21.969Z</updated>
+    <updated>2021-01-08T06:30:17.467Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Jenkins-Windows下使用（2-263-3以上版本）问题"><a href="#Jenkins-Windows下使用（2-263-3以上版本）问题" class="headerlink" title="Jenkins Windows下使用（2.263.3以上版本）问题"></a>Jenkins Windows下使用（2.263.3以上版本）问题</h3><blockquote><blockquote><p>此次因为项目重新部署了服务器，所以持续集成、项目数据库、项目代码都需要迁移。<br>但是发现在迁移过程中，新版本的Jenkins在windows下运行问题多多（不知道官方是怎么发布出来的）<br>我从jenkins 2.263.3版本换到2.274版本全都试过，不是windows安装后插件无法更新就是根据网上的配置修改了UpdateCenter的Https地址后<br>Git插件无法下载，插件即便是下载下来由于我用的Gitee，代码也无法克隆等一系列问题。</p></blockquote></blockquote><h3 id="如何解决新版本一系列问题"><a href="#如何解决新版本一系列问题" class="headerlink" title="如何解决新版本一系列问题"></a>如何解决新版本一系列问题</h3><blockquote><blockquote><p>当我发现这些问题后，在网上找资料，修改过UpdateCenter、修改过插件default.json的地址配置，一切都是徒劳，问题越用越多。<br>我觉得使用正常的安装模式已经是很难达到我的使用要求。所以找了另类的一套方案。<br>我的目的很简单，只要jenkins对应我需要的插件能在windows服务器上正常的使用<br>而且docker单独部署还需要跨容器访问，这块我暂时没有接触过，对于未知也是有一定的部署和学习风险。所以不使用这样的方案。<br>第一步，因为我旧服务器使用的是2.176版本，属于旧版本，但是能正常使用，而唯一的不同是每次登陆都会有一大堆的插件不兼容问题。<br>然后我将Jenkins根目录下的plus插件全部压缩打包，在官网同时又下载了最新的2.263.3的War包。<br>将他们放到了新的服务器中。<br>第二步，在新的服务器中继续使用2.176版本的安装包，安装非常快，安装完成后，我将plus插件压缩包解压放到的jenkins目录中<br>将war包也解压缩覆盖了Jenkins主目录的文件。<br>然后打开localhost:8080端口jenkins，同样查找默认密码登陆<br>发现登陆后可以正常搜索插件（只有部分插件无法更新），进入系统后，点击了jenkins本地更新，更新到2.263.3版本重启。<br>重启登陆后，更新必要的插件，发现一切都如同旧版本一样在2.263.3版本下持续集成毫无问题。</p></blockquote></blockquote><hr><p>此新版jenkins在windows上部署安装，git获取代码发布困扰了我整整3天，此方案也是突发奇想发现的，所以特意记下来，希望将来jenkins在新的后续版本中能够使用更加的方便。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="Jenkins-Windows下使用（2-263-3以上版本）问题"><a href="#Jenkins-Windows下使用（2-263-3以上版本）问题" class="headerlink" title="Jenkins Windows下使用（2.263.3以上版本）问题"></a>Jenkins Windows下使用（2.263.3以上版本）问题</h3><blockquote><p>此次因为项目重新部署了服务器，所以持续集成、项目数据库、项目代码都需要迁移。<br>但是发现在迁移过程中，新版本的Jenkins在windows下运行问题多多（不知道官方是怎么发布出来的）<br>我从jenkins 2.263.3版本换到2.274版本全都试过，不是windows安装后插件无法更新就是根据网上的配置修改了UpdateCenter的Https地址后<br>Git插件无法下载，插件即便是下载下来由于我用的Gitee，代码也无法克隆等一系列问题。</p></blockquote><h3 id="如何解决新版本一系列问题"><a href="#如何解决新版本一系列问题" class="headerlink" title="如何解决新版本一系列问题"></a>如何解决新版本一系列问题</h3><blockquote><p>当我发现这些问题后，在网上找资料，修改过UpdateCenter、修改过插件default.json的地址配置，一切都是徒劳，问题越用越多。<br>我觉得使用正常的安装模式已经是很难达到我的使用要求。所以找了另类的一套方案。<br>我的目的很简单，只要jenkins对应我需要的插件能在windows服务器上正常的使用<br>而且docker单独部署还需要跨容器访问，这块我暂时没有接触过，对于未知也是有一定的部署和学习风险。所以不使用这样的方案。<br>第一步，因为我旧服务器使用的是2.176版本，属于旧版本，但是能正常使用，而唯一的不同是每次登陆都会有一大堆的插件不兼容问题。<br>然后我将Jenkins根目录下的plus插件全部压缩打包，在官网同时又下载了最新的2.263.3的War包。<br>将他们放到了新的服务器中。<br>第二步，在新的服务器中继续使用2.176版本的安装包，安装非常快，安装完成后，我将plus插件压缩包解压放到的jenkins目录中<br>将war包也解压缩覆盖了Jenkins主目录的文件。<br>然后打开localhost:8080端口jenkins，同样查找默认密码登陆<br>发现登陆后可以正常搜索插件（只有部分插件无法更新），进入系统后，点击了jenkins本地更新，更新到2.263.3版本重启。<br>重启登陆后，更新必要的插件，发现一切都如同旧版本一样在2.263.3版本下持续集成毫无问题。</p></blockquote><hr><p>此新版jenkins在windows上部署安装，git获取代码发布困扰了我整整3天，此方案也是突发奇想发现的，所以特意记下来，希望将来jenkins在新的后续版本中能够使用更加的方便。</p>]]></content>
     
     <summary type="html">
     
@@ -47,9 +74,9 @@
     <link href="http://blog.wusirun.info/2021/01/08/ABP%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/"/>
     <id>http://blog.wusirun.info/2021/01/08/ABP%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/</id>
     <published>2021-01-08T06:09:47.000Z</published>
-    <updated>2021-01-08T06:25:09.594Z</updated>
+    <updated>2021-01-08T06:30:04.700Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="ABP框架结构解释"><a href="#ABP框架结构解释" class="headerlink" title="ABP框架结构解释"></a>ABP框架结构解释</h3><img src="/images/layered-project-dependencies.png'" abp框架结构图"" class="xmind">]]></content>
+    <content type="html"><![CDATA[<h3 id="ABP框架结构解释"><a href="#ABP框架结构解释" class="headerlink" title="ABP框架结构解释"></a>ABP框架结构解释</h3><img src="/images/layered-project-dependencies.png" class="ABP框架结构图" title="ABP框架结构图"><ol><li>Domain.shared <blockquote><p>此层是放模块共享的东西，如公用的枚举、常量</p></blockquote></li><li>Domain <blockquote><p>此层是放实体、聚合根、领域服务、值类型、仓储接口</p></blockquote></li><li>Application.Contracts<blockquote><p>此层放应用服务接口、和DTOs</p></blockquote></li><li>Application<blockquote><p>此层是放应用服务实现</p></blockquote></li><li>EntityFrameWork.Core<blockquote><p>此层是EF Core实现</p></blockquote></li><li>HttpApi<blockquote><p>此层是模块WebApi实现</p></blockquote></li><li>HttpApi.Client<blockquote><p>此层是对应第三方API接口</p></blockquote></li><li>Web<blockquote><p>此层是对应MVC或者其他前端</p></blockquote></li></ol>]]></content>
     
     <summary type="html">
     
@@ -395,7 +422,7 @@
     <link href="http://blog.wusirun.info/2019/09/18/%E5%BC%80%E7%AF%87/"/>
     <id>http://blog.wusirun.info/2019/09/18/%E5%BC%80%E7%AF%87/</id>
     <published>2019-09-18T08:30:11.000Z</published>
-    <updated>2020-01-10T09:26:21.188Z</updated>
+    <updated>2021-01-08T06:30:24.331Z</updated>
     
     <content type="html"><![CDATA[<h3 id="想写点东西"><a href="#想写点东西" class="headerlink" title="想写点东西"></a>想写点东西</h3><p>&nbsp;&nbsp;从参加工作,到后来加入博客园这么多年的时间其实一直就想将自己经历和所学慢慢整理记录下来.做成自己的博客查阅,但是一直也没能有动力去实现它.<br>&nbsp;&nbsp;到现在来说博客已经见怪不怪了,方便快捷,而且也越来越多元化.身为一个从业这么多年的码农,此时更想把自己所学慢慢整理记录起来.<br>这也就是说~我的博客开张啦~</p>]]></content>
     

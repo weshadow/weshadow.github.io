@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"blog.wusirun.info","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Jenkins Windows下使用（2.263.3以上版本）问题  此次因为项目重新部署了服务器，所以持续集成、项目数据库、项目代码都需要迁移。但是发现在迁移过程中，新版本的Jenkins在windows下运行问题多多（不知道官方是怎么发布出来的）我从jenkins 2.263.3版本换到2.274版本全都试过，不是windows安装后插件无法更新就是根据网上的配置修改了UpdateCenter">
+  <meta name="description" content="Jenkins Windows下使用（2.263.3以上版本）问题 此次因为项目重新部署了服务器，所以持续集成、项目数据库、项目代码都需要迁移。但是发现在迁移过程中，新版本的Jenkins在windows下运行问题多多（不知道官方是怎么发布出来的）我从jenkins 2.263.3版本换到2.274版本全都试过，不是windows安装后插件无法更新就是根据网上的配置修改了UpdateCenter的">
 <meta name="keywords" content="jenkins">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jenkins新版本windows踩坑记录">
 <meta property="og:url" content="http://blog.wusirun.info/2021/01/08/Jenkins新版本windows踩坑记录/index.html">
 <meta property="og:site_name" content="一介码农">
-<meta property="og:description" content="Jenkins Windows下使用（2.263.3以上版本）问题  此次因为项目重新部署了服务器，所以持续集成、项目数据库、项目代码都需要迁移。但是发现在迁移过程中，新版本的Jenkins在windows下运行问题多多（不知道官方是怎么发布出来的）我从jenkins 2.263.3版本换到2.274版本全都试过，不是windows安装后插件无法更新就是根据网上的配置修改了UpdateCenter">
+<meta property="og:description" content="Jenkins Windows下使用（2.263.3以上版本）问题 此次因为项目重新部署了服务器，所以持续集成、项目数据库、项目代码都需要迁移。但是发现在迁移过程中，新版本的Jenkins在windows下运行问题多多（不知道官方是怎么发布出来的）我从jenkins 2.263.3版本换到2.274版本全都试过，不是windows安装后插件无法更新就是根据网上的配置修改了UpdateCenter的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-01-08T06:24:21.969Z">
+<meta property="og:updated_time" content="2021-01-08T06:30:17.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jenkins新版本windows踩坑记录">
-<meta name="twitter:description" content="Jenkins Windows下使用（2.263.3以上版本）问题  此次因为项目重新部署了服务器，所以持续集成、项目数据库、项目代码都需要迁移。但是发现在迁移过程中，新版本的Jenkins在windows下运行问题多多（不知道官方是怎么发布出来的）我从jenkins 2.263.3版本换到2.274版本全都试过，不是windows安装后插件无法更新就是根据网上的配置修改了UpdateCenter">
+<meta name="twitter:description" content="Jenkins Windows下使用（2.263.3以上版本）问题 此次因为项目重新部署了服务器，所以持续集成、项目数据库、项目代码都需要迁移。但是发现在迁移过程中，新版本的Jenkins在windows下运行问题多多（不知道官方是怎么发布出来的）我从jenkins 2.263.3版本换到2.274版本全都试过，不是windows安装后插件无法更新就是根据网上的配置修改了UpdateCenter的">
 
 <link rel="canonical" href="http://blog.wusirun.info/2021/01/08/Jenkins新版本windows踩坑记录/">
 
@@ -207,7 +207,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-01-08 14:10:13 / 修改时间：14:24:21" itemprop="dateCreated datePublished" datetime="2021-01-08T14:10:13+08:00">2021-01-08</time>
+              <time title="创建时间：2021-01-08 14:10:13 / 修改时间：14:30:17" itemprop="dateCreated datePublished" datetime="2021-01-08T14:10:13+08:00">2021-01-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,14 +231,10 @@
 
       
         <h3 id="Jenkins-Windows下使用（2-263-3以上版本）问题"><a href="#Jenkins-Windows下使用（2-263-3以上版本）问题" class="headerlink" title="Jenkins Windows下使用（2.263.3以上版本）问题"></a>Jenkins Windows下使用（2.263.3以上版本）问题</h3><blockquote>
-<blockquote>
 <p>此次因为项目重新部署了服务器，所以持续集成、项目数据库、项目代码都需要迁移。<br>但是发现在迁移过程中，新版本的Jenkins在windows下运行问题多多（不知道官方是怎么发布出来的）<br>我从jenkins 2.263.3版本换到2.274版本全都试过，不是windows安装后插件无法更新就是根据网上的配置修改了UpdateCenter的Https地址后<br>Git插件无法下载，插件即便是下载下来由于我用的Gitee，代码也无法克隆等一系列问题。</p>
 </blockquote>
-</blockquote>
 <h3 id="如何解决新版本一系列问题"><a href="#如何解决新版本一系列问题" class="headerlink" title="如何解决新版本一系列问题"></a>如何解决新版本一系列问题</h3><blockquote>
-<blockquote>
 <p>当我发现这些问题后，在网上找资料，修改过UpdateCenter、修改过插件default.json的地址配置，一切都是徒劳，问题越用越多。<br>我觉得使用正常的安装模式已经是很难达到我的使用要求。所以找了另类的一套方案。<br>我的目的很简单，只要jenkins对应我需要的插件能在windows服务器上正常的使用<br>而且docker单独部署还需要跨容器访问，这块我暂时没有接触过，对于未知也是有一定的部署和学习风险。所以不使用这样的方案。<br>第一步，因为我旧服务器使用的是2.176版本，属于旧版本，但是能正常使用，而唯一的不同是每次登陆都会有一大堆的插件不兼容问题。<br>然后我将Jenkins根目录下的plus插件全部压缩打包，在官网同时又下载了最新的2.263.3的War包。<br>将他们放到了新的服务器中。<br>第二步，在新的服务器中继续使用2.176版本的安装包，安装非常快，安装完成后，我将plus插件压缩包解压放到的jenkins目录中<br>将war包也解压缩覆盖了Jenkins主目录的文件。<br>然后打开localhost:8080端口jenkins，同样查找默认密码登陆<br>发现登陆后可以正常搜索插件（只有部分插件无法更新），进入系统后，点击了jenkins本地更新，更新到2.263.3版本重启。<br>重启登陆后，更新必要的插件，发现一切都如同旧版本一样在2.263.3版本下持续集成毫无问题。</p>
-</blockquote>
 </blockquote>
 <hr>
 <p>此新版jenkins在windows上部署安装，git获取代码发布困扰了我整整3天，此方案也是突发奇想发现的，所以特意记下来，希望将来jenkins在新的后续版本中能够使用更加的方便。</p>
@@ -282,7 +278,10 @@
     <a href="/2021/01/08/ABP框架搭建/" rel="prev" title="ABP框架搭建">
       <i class="fa fa-chevron-left"></i> ABP框架搭建
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/22/2021年读书笔记/" rel="next" title="2021年读书笔记">
+      2021年读书笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -357,7 +356,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

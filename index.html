@@ -180,6 +180,74 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2021/01/22/2021年读书笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Shadow">
+      <meta itemprop="description" content="记录生活点滴，记录步步前进">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一介码农">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/22/2021年读书笔记/" class="post-title-link" itemprop="url">2021年读书笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-22 14:12:31 / 修改时间：14:13:41" itemprop="dateCreated datePublished" datetime="2021-01-22T14:12:31+08:00">2021-01-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/阅读/" itemprop="url" rel="index"><span itemprop="name">阅读</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="《算法》第四版"><a href="#《算法》第四版" class="headerlink" title="《算法》第四版"></a>《算法》第四版</h3><p>### </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2021/01/08/Jenkins新版本windows踩坑记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -205,7 +273,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-01-08 14:10:13 / 修改时间：14:24:21" itemprop="dateCreated datePublished" datetime="2021-01-08T14:10:13+08:00">2021-01-08</time>
+              <time title="创建时间：2021-01-08 14:10:13 / 修改时间：14:30:17" itemprop="dateCreated datePublished" datetime="2021-01-08T14:10:13+08:00">2021-01-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,14 +297,10 @@
 
       
           <h3 id="Jenkins-Windows下使用（2-263-3以上版本）问题"><a href="#Jenkins-Windows下使用（2-263-3以上版本）问题" class="headerlink" title="Jenkins Windows下使用（2.263.3以上版本）问题"></a>Jenkins Windows下使用（2.263.3以上版本）问题</h3><blockquote>
-<blockquote>
 <p>此次因为项目重新部署了服务器，所以持续集成、项目数据库、项目代码都需要迁移。<br>但是发现在迁移过程中，新版本的Jenkins在windows下运行问题多多（不知道官方是怎么发布出来的）<br>我从jenkins 2.263.3版本换到2.274版本全都试过，不是windows安装后插件无法更新就是根据网上的配置修改了UpdateCenter的Https地址后<br>Git插件无法下载，插件即便是下载下来由于我用的Gitee，代码也无法克隆等一系列问题。</p>
 </blockquote>
-</blockquote>
 <h3 id="如何解决新版本一系列问题"><a href="#如何解决新版本一系列问题" class="headerlink" title="如何解决新版本一系列问题"></a>如何解决新版本一系列问题</h3><blockquote>
-<blockquote>
 <p>当我发现这些问题后，在网上找资料，修改过UpdateCenter、修改过插件default.json的地址配置，一切都是徒劳，问题越用越多。<br>我觉得使用正常的安装模式已经是很难达到我的使用要求。所以找了另类的一套方案。<br>我的目的很简单，只要jenkins对应我需要的插件能在windows服务器上正常的使用<br>而且docker单独部署还需要跨容器访问，这块我暂时没有接触过，对于未知也是有一定的部署和学习风险。所以不使用这样的方案。<br>第一步，因为我旧服务器使用的是2.176版本，属于旧版本，但是能正常使用，而唯一的不同是每次登陆都会有一大堆的插件不兼容问题。<br>然后我将Jenkins根目录下的plus插件全部压缩打包，在官网同时又下载了最新的2.263.3的War包。<br>将他们放到了新的服务器中。<br>第二步，在新的服务器中继续使用2.176版本的安装包，安装非常快，安装完成后，我将plus插件压缩包解压放到的jenkins目录中<br>将war包也解压缩覆盖了Jenkins主目录的文件。<br>然后打开localhost:8080端口jenkins，同样查找默认密码登陆<br>发现登陆后可以正常搜索插件（只有部分插件无法更新），进入系统后，点击了jenkins本地更新，更新到2.263.3版本重启。<br>重启登陆后，更新必要的插件，发现一切都如同旧版本一样在2.263.3版本下持续集成毫无问题。</p>
-</blockquote>
 </blockquote>
 <hr>
 <p>此新版jenkins在windows上部署安装，git获取代码发布困扰了我整整3天，此方案也是突发奇想发现的，所以特意记下来，希望将来jenkins在新的后续版本中能够使用更加的方便。</p>
@@ -284,7 +348,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-01-08 14:09:47 / 修改时间：14:25:09" itemprop="dateCreated datePublished" datetime="2021-01-08T14:09:47+08:00">2021-01-08</time>
+              <time title="创建时间：2021-01-08 14:09:47 / 修改时间：14:30:04" itemprop="dateCreated datePublished" datetime="2021-01-08T14:09:47+08:00">2021-01-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -307,7 +371,42 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="ABP框架结构解释"><a href="#ABP框架结构解释" class="headerlink" title="ABP框架结构解释"></a>ABP框架结构解释</h3><img src="/images/layered-project-dependencies.png'" abp框架结构图"" class="xmind">
+          <h3 id="ABP框架结构解释"><a href="#ABP框架结构解释" class="headerlink" title="ABP框架结构解释"></a>ABP框架结构解释</h3><img src="/images/layered-project-dependencies.png" class="ABP框架结构图" title="ABP框架结构图">
+<ol>
+<li>Domain.shared <blockquote>
+<p>此层是放模块共享的东西，如公用的枚举、常量</p>
+</blockquote>
+</li>
+<li>Domain <blockquote>
+<p>此层是放实体、聚合根、领域服务、值类型、仓储接口</p>
+</blockquote>
+</li>
+<li>Application.Contracts<blockquote>
+<p>此层放应用服务接口、和DTOs</p>
+</blockquote>
+</li>
+<li>Application<blockquote>
+<p>此层是放应用服务实现</p>
+</blockquote>
+</li>
+<li>EntityFrameWork.Core<blockquote>
+<p>此层是EF Core实现</p>
+</blockquote>
+</li>
+<li>HttpApi<blockquote>
+<p>此层是模块WebApi实现</p>
+</blockquote>
+</li>
+<li>HttpApi.Client<blockquote>
+<p>此层是对应第三方API接口</p>
+</blockquote>
+</li>
+<li>Web<blockquote>
+<p>此层是对应MVC或者其他前端</p>
+</blockquote>
+</li>
+</ol>
+
       
     </div>
 
@@ -944,94 +1043,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2020/06/20/leetcode-255-队列实现栈/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Shadow">
-      <meta itemprop="description" content="记录生活点滴，记录步步前进">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一介码农">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/20/leetcode-255-队列实现栈/" class="post-title-link" itemprop="url">leetcode_255_队列实现栈</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-20 22:15:22" itemprop="dateCreated datePublished" datetime="2020-06-20T22:15:22+08:00">2020-06-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-05 16:48:11" itemprop="dateModified" datetime="2020-11-05T16:48:11+08:00">2020-11-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="LeetCode-255题"><a href="#LeetCode-255题" class="headerlink" title="LeetCode.255题"></a>LeetCode.255题</h3><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="用队列实现栈"><a href="#用队列实现栈" class="headerlink" title="用队列实现栈"></a>用队列实现栈</h4><hr>
-<blockquote>
-<ol>
-<li>思考队列先进先出，栈先进后出</li>
-<li>就肯定需要用多个队列模拟</li>
-<li>两种实现方式：<blockquote>
-<ol>
-<li>实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。</li>
-<li>实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素将队1刚push的元素加入。如果有元素，将队2的元素依次出队加入到队1中，队1队2交换或者复制。出栈模拟时从队2出队。</li>
-</ol>
-</blockquote>
-</li>
-<li>扩展思考？ 用栈模拟队列操作</li>
-</ol>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1103,7 +1114,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

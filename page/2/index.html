@@ -180,6 +180,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2020/06/20/leetcode-255-队列实现栈/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Shadow">
+      <meta itemprop="description" content="记录生活点滴，记录步步前进">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一介码农">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/20/leetcode-255-队列实现栈/" class="post-title-link" itemprop="url">leetcode_255_队列实现栈</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-20 22:15:22" itemprop="dateCreated datePublished" datetime="2020-06-20T22:15:22+08:00">2020-06-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-05 16:48:11" itemprop="dateModified" datetime="2020-11-05T16:48:11+08:00">2020-11-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="LeetCode-255题"><a href="#LeetCode-255题" class="headerlink" title="LeetCode.255题"></a>LeetCode.255题</h3><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="用队列实现栈"><a href="#用队列实现栈" class="headerlink" title="用队列实现栈"></a>用队列实现栈</h4><hr>
+<blockquote>
+<ol>
+<li>思考队列先进先出，栈先进后出</li>
+<li>就肯定需要用多个队列模拟</li>
+<li>两种实现方式：<blockquote>
+<ol>
+<li>实现方式一 push时操作差不多，在pop时增加逻辑。从队1中持续push元素，如果pop时，将队1元素push到队2，直到队1最后一个元素，将队1模拟出栈，然后将队1队2交换或者复制。</li>
+<li>实现方式二 从入栈开始增加逻辑。从队1中push元素，队2出栈元素，如果队2中没有元素将队1刚push的元素加入。如果有元素，将队2的元素依次出队加入到队1中，队1队2交换或者复制。出栈模拟时从队2出队。</li>
+</ol>
+</blockquote>
+</li>
+<li>扩展思考？ 用栈模拟队列操作</li>
+</ol>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://blog.wusirun.info/2020/05/25/2020工作学习计划/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -543,7 +631,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-10 17:26:21" itemprop="dateModified" datetime="2020-01-10T17:26:21+08:00">2020-01-10</time>
+                <time title="修改时间：2021-01-08 14:30:24" itemprop="dateModified" datetime="2021-01-08T14:30:24+08:00">2021-01-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -653,7 +741,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
